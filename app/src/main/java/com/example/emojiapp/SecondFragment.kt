@@ -19,6 +19,8 @@ private const val ARG_PARAM2 = "param2"
  * Use the [SecondFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
+private var number = 0
+
 class SecondFragment : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
@@ -43,14 +45,16 @@ class SecondFragment : Fragment() {
 
         val txtView : TextView = view.findViewById(R.id.textView6)
         val items : TextView = view.findViewById(R.id.number_item)
-
+        items.text = number.toString()
 
         view.findViewById<ImageView>(R.id.Add_btn).setOnClickListener{
-            items.text = "3"
+            number--
+            items.text = number.toString()
         }
 
         view.findViewById<ImageView>(R.id.Remove_btn).setOnClickListener{
-            items.text = "1"
+            number++
+            items.text = number.toString()
         }
 
 
